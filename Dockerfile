@@ -14,6 +14,6 @@ COPY . /app
 RUN npm run build --prod
 
 #Segunda Etapa
-FROM nginx:1.17.1-alpine
+FROM nginxinc/nginx-unprivileged
 	#Si estas utilizando otra aplicacion cambia PokeApp por el nombre de tu app
 COPY --from=build-step /app/dist/PokeApp /usr/share/nginx/html
